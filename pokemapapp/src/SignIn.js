@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, Dimensions, Image } from 'react-native';
+import { View, Text, Dimensions, Image, StyleSheet } from 'react-native';
 import { Form, Item, Label, Input, Button } from 'native-base';
+import myBackground from '../assets/icons/landing.jpg'
 
-let myBackground = require('../assets/icons/landing.jpg');
+// let myBackground = require('../assets/icons/landing.jpg');
 let height = Dimensions.get('window').height;
 let width = Dimensions.get('window').width;
 

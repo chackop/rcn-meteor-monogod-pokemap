@@ -3,11 +3,21 @@ import { StyleSheet, Text, View } from 'react-native';
 import SignIn from './src/SignIn';
 import Meteor, { createContainer, Accounts } from 'react-native-meteor';
 import PokeMap from './src/PokeMap';
+import { AppLoading, Font } from 'expo';
+import Roboto
+  from './node_modules/native-base/Fonts/Roboto.ttf';
+import Roboto_medium
+  from './node_modules/native-base/Fonts/Roboto_medium.ttf';
+
 
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(true);
+  const [fontLoaded, setFontLoaded] = useState(false);
+  const SERVER_URL = 'http://localhost:3000/websocket';
+
 
   useEffect(() => {
+    fontLoad();
     console.log('connecting');
     Meteor.connect(SERVER_URL);
     console.log(Meteor.userId())
@@ -15,6 +25,28 @@ export default function App() {
       flipLogin(true);
     }
   });
+
+  const fontLoad = async () => {
+    try {
+
+      await Font.loadAsync({
+
+        Roboto,
+
+        Roboto_medium
+
+      });
+
+      setFontLoaded(true)
+
+    } catch (error) {
+
+      console.log('error loading icon fonts', error);
+
+    }
+
+  }
+
 
   const flipLogin = (x) => {
     setLoggedIn(x)
@@ -52,11 +84,15 @@ export default function App() {
     }
   }
 
-  return (
-    <View style={styles.container}>
-      {renderView()}
-    </View>
-  );
+  if (!fontLoaded) {
+    return <AppLoading />;
+  } else {
+    return (
+      <View style={styles.container}>
+        {renderView()}
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({

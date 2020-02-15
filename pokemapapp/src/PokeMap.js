@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image } from 'react-native';
 import { Header, Left, Button, Icon, Body, Title, Right, Fab } from 'native-base';
-import { MapView } from 'expo';
+// import { MapView } from 'expo';
+import MapView from 'react-native-maps';
 import Meteor, { createContainer } from 'react-native-meteor';
 
 let mapStyle = [
@@ -132,6 +133,10 @@ let mapStyle = [
 
 
 const PokeMap = ({ pokemon, flipLogin }) => {
+    // if (!pokemon) {
+    //     return
+    // }
+
     const [location, setLocation] = useState({});
 
     const recordEvent = (x) => {
@@ -146,7 +151,7 @@ const PokeMap = ({ pokemon, flipLogin }) => {
     }
 
     const removePokemon = () => {
-        if (pokemon.length === 0) {
+        if (pokemon && pokemon.length === 0) {
             return;
         }
 
@@ -158,7 +163,7 @@ const PokeMap = ({ pokemon, flipLogin }) => {
     }
 
     const renderPokemon = () => {
-        return pokemon.length > 0 && pokemon.map(p => {
+        return pokemon && pokemon.length > 0 && pokemon.map(p => {
             return (
                 <MapView.Marker
                     coordinate={{ latitude: p.latitude, longitude: p.longitude }}

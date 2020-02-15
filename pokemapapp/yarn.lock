@@ -785,7 +785,7 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@expo/vector-icons@^10.0.2":
+"@expo/vector-icons@^10.0.2", "@expo/vector-icons@^10.0.6":
   version "10.0.6"
   resolved "https://registry.yarnpkg.com/@expo/vector-icons/-/vector-icons-10.0.6.tgz#5718953ff0b97827d11dae5787976fa8ce5caaed"
   dependencies:
@@ -3829,6 +3829,10 @@ react-native-keyboard-aware-scroll-view@0.9.1:
     prop-types "^15.6.2"
     react-native-iphone-x-helper "^1.0.3"
 
+react-native-maps@0.26.1:
+  version "0.26.1"
+  resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.26.1.tgz#6ec316259b38d259c8974448d894bd7a23101da4"
+
 react-native-meteor@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/react-native-meteor/-/react-native-meteor-1.4.0.tgz#d7ffff9ce8c6057725c3a3d72ca65746544e6618"
@@ -3843,6 +3847,10 @@ react-native-meteor@^1.4.0:
     trackr "^2.0.2"
     underscore "^1.8.3"
     wolfy87-eventemitter "^4.3.0"
+
+react-native-netinfo@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-netinfo/-/react-native-netinfo-1.1.0.tgz#343a4a9413006493f350bc7923688bb3315c3dce"
 
 react-native-vector-icons@^6.6.0:
   version "6.6.0"
