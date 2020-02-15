@@ -11,8 +11,8 @@ const SignIn = ({ signIn }) => {
     const [password, setpassword] = useState("");
 
     const logIn = () => {
-        let email = email;
-        let password = password;
+        // let email = email;
+        // let password = password;
 
         signIn(email, password);
     }
@@ -55,7 +55,7 @@ const SignIn = ({ signIn }) => {
     )
 }
 
-const styles = StyleSheet.create({{
+const styles = StyleSheet.create({
     backgroundImage: {
         flex: 1,
         resizeMode: 'cover',
